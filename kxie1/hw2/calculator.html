@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="css/calculator.css">
+        <script src="js/calculator.js"> </script>
+    </head>
+
+    <body>
+        <div class="center">
+            <h1>Web Calculator</h1>
+            <form name="calculator">
+                <div class="display">
+                    <input type="text" id="display" value="0" disabled>
+                </div>
+                    <br>
+                <button class="btn number" type="button" value="7" onClick="pressDigit(this.value);">7</button>
+                <button class="btn number" type="button" value="8" onClick="pressDigit(this.value);">8</button>
+                <button class="btn number" type="button" value="9" onClick="pressDigit(this.value);">9</button>
+                <button class="btn operator" type="button" value="+" onClick="pressOperation(this.value);">&plus;</button>
+                    <br>
+                <button class="btn number" type="button" value="4" onClick="pressDigit(this.value);">4</button>
+                <button class="btn number" type="button" value="5" onClick="pressDigit(this.value);">5</button>
+                <button class="btn number" type="button" value="6" onClick="pressDigit(this.value);">6</button>
+                <button class="btn operator" type="button" value="-" onClick="pressOperation(this.value);">&minus;</button>
+                    <br>
+                <button class="btn number" type="button" value="1" onClick="pressDigit(this.value);">1</button>
+                <button class="btn number" type="button" value="2" onClick="pressDigit(this.value);">2</button>
+                <button class="btn number" type="button" value="3" onClick="pressDigit(this.value);">3</button>
+                <button class="btn operator" type="button" value="*" onClick="pressOperation(this.value);">&times;</button>
+                    <br>
+                <button class="btn number" type="button" value="0" onClick="pressDigit(this.value);">0</button>
+                <button class="btn operator col-2" type="button" value="=" onClick="pressOperation(this.value);">&equals;</button>
+                <button class="btn operator" type="button" value="/" onClick="pressOperation(this.value);">&divide;</button>
+            </form>
+
+        </div>
+    </body>
+</html>

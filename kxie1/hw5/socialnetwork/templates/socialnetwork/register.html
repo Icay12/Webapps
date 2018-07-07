@@ -1,0 +1,25 @@
+{% extends "socialnetwork/base.html" %}
+
+
+{% block option %}
+    <form action="{% url 'login' %}" method="get">
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}
+
+{% block part-head %}
+REGISTER
+{% endblock %}
+
+
+{% block content %}
+    <p>Register for the Blog Master:</p>
+
+    <form method="post" action="{% url 'register' %}">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Register" />
+    </form>
+{% endblock %}

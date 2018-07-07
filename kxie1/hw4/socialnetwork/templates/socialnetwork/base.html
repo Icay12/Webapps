@@ -1,0 +1,107 @@
+<!doctype html>
+<html style="background-color: #f9f9f9">
+	<head>
+	    <meta charset="utf-8">
+	    {% load staticfiles %}
+{#        <link href="assets/css/workless.css" rel="stylesheet">#}
+
+{#		<link href="{% static 'addrbook/base.css' %}" rel="stylesheet" type="text/css">#}
+        <link rel="stylesheet" href="https://unpkg.com/wingcss">
+        <link rel="stylesheet" href=" {% static 'socialnetwork/socialnetwork.css' %}" type="text/css">
+        <link rel="stylesheet"  href="{% static 'socialnetwork/wing.css' %} " type="text/css">
+{#        <link rel="stylesheet" type="text/css" href="static/socialnetwork/fonts.css" />#}
+{#        <link rel="stylesheet" type="text/css" href="static/socialnetwork/styles.css" />#}
+{#        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@VERSION/dist/siimple.min.css">#}
+		<title>  Blog Master  </title>
+	</head>
+
+	<body>
+
+
+    <section  name = "head">
+        <div class = "text-center"><h1 style="background-color:rgba(68,131,141,0.78)" class="header">Blog  Master</h1></div>
+    </section>
+
+
+    <section  name = "user-info">
+        <div class="nav horizontal-align right">
+{#            {% block user-info %}#}
+{#            <div class = "nav-item"><a href="#register">Register</a></div>#}
+{#            <div class = "nav-item"><a href="#login">Installation</a></div>#}
+{#            {% endblock %}#}
+
+
+        <div class="row">
+            <div class="col">
+                {% block user-info %}
+                {% endblock %}
+            </div>
+{#          <div class="col">#}
+
+{#            <h5 class="text-center">Intuitive</h5>#}
+{#            <p class="content">All you have to do is drop Wing into your project, and everything will be styled automatically. There is a minimal amount of classes to learn.</p>#}
+{#          </div>#}
+        {% block option %}
+
+
+
+{#            <h5 class="text-center">Lightweight</h5>#}
+{#            <p class="content">Wing comes packed with features, including styling for most elements, a grid, and some components, all in just <strong>5kb.</strong></p>#}
+
+        {% endblock %}
+{#          <div class="col">#}
+{#            <h5 class="text-center">Beautiful</h5>#}
+{#            <p class="content">The styles that come with Wing are clean and modern, dropping it into your project will give you a headstart in design.</p>#}
+{#          </div>#}
+        </div>
+
+
+        </div>
+{#      <div class="nav-item"><a href="#guide">Guide</a></div>#}
+{#      <div class="nav-item"><a href="https://github.com/kbrsh/wing" target="_blank">Github</a></div>#}
+{#      <div class="nav-item"><iframe src="https://ghbtns.com/github-btn.html?user=kbrsh&repo=wing&type=star&count=true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe></div>#}
+    </section>
+
+
+{##}
+{##}
+{#    <section name = "part-head">#}
+{#      <div class="hero container center text-center">#}
+{#        <h5>A beautiful CSS framework designed for minimalists.</h5>#}
+{#      </div>#}
+{#    </section>#}
+
+    <section name="part-head" class="container center">
+        <h4 class="header">{% block part-head %}{% endblock %}</h4>
+{#        <div class="row">#}
+{#          <div class="col">#}
+{#            <h5 class="text-center">Intuitive</h5>#}
+{#            <p class="content">All you have to do is drop Wing into your project, and everything will be styled automatically. There is a minimal amount of classes to learn.</p>#}
+{#          </div>#}
+{#          <div class="col">#}
+{#            <h5 class="text-center">Lightweight</h5>#}
+{#            <p class="content">Wing comes packed with features, including styling for most elements, a grid, and some components, all in just <strong>5kb.</strong></p>#}
+{#          </div>#}
+{#          <div class="col">#}
+{#            <h5 class="text-center">Beautiful</h5>#}
+{#            <p class="content">The styles that come with Wing are clean and modern, dropping it into your project will give you a headstart in design.</p>#}
+{#          </div>#}
+{#        </div>#}
+    </section>
+
+
+    {% if message %}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endif %}
+
+    <section name="content" class="container center">
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </section>
+
+	</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "socialnetwork/base.html" %}
+
+
+{% block part-head %}
+WELCOME to the Blog Master
+{% endblock %}
+
+
+
+{% block option %}
+{#    <div class = "nav-item"><a href="/socialnetwork/register">Register</a></div>#}
+{#    <div class = "nav-item"><a href="/socialnetwork/login">Login</a></div>#}
+
+    <form action="{% url 'login' %}" method="get">
+        <input type="submit" value="Login">
+    </form>
+
+    <form action="{% url 'register' %}" method="get">
+        <input type="submit" value="Register">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} <br>
+    username={{user.username}}
+{% endblock %}
+
+{% block option %}
+    <div class="col">
+    <form action="{% url 'global' %}" method="get">
+        <input type="submit" value="Global Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'follower' %}" method="get">
+        <input type="submit" value="Follower Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'profile' %}" method="get">
+        <input type="submit" value="Profile">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout">
+    </form>
+    </div>
+
+{% endblock %}
+
+{% block part-head %}
+    FOLLOWER STREAM
+{% endblock %}
+
+{% if message %}
+    <div class="message">
+        {{message}}
+    </div>
+{% endif %}
+
+
+{% block content %}
+
+    {% for error in form.non_field_errors %}
+        <p style="color: red">
+            {{ error }}
+        </p>
+    {% endfor %}
+
+
+    <form method="post" action="#create">
+        <div class="row">
+            <div class="col">
+                <h5>New Post</h5>
+                <textarea placeholder="Talk about something..."></textarea>
+                <input type="submit" value="Post">
+            </div>
+        </div>
+        {% csrf_token %}
+    </form>
+
+
+    <form method="post" action= "#global_stream">
+        <h5>See what are others doing</h5>
+        <div class="cards">
+            {% for gentry in gentries %}
+            <div class="card">
+                <a href="/socialnetwork/profile"><h5 class="card-header" action="#profile">{{gentry.first_name}} {{gentry.last_name}}</h5></a>
+                <h7 class="card-header">{{gentry.creation_time}}</h7>
+                <p class="card-body">{{gentry.post}}</p>
+                <h6>Comments:</h6>
+                <div >
+                {% for comment in gentry.comments %}
+                    <a href="/socialnetwork/profile"><h7 class="card-header">{{comment.first_name}} {{comment.last_name}} {{comment.creation_time}}</h7></a>
+                    <p class="card-body">{{comment.comm}}</p>
+                {% endfor %}
+                </div>
+                <input style="width : 320px" type = "text" placeholder="Give some comment...">
+                <input class="align-right" type="submit" value="Comment">
+{#                <div class="card-footer center text-center"><p>Footer</p></div>#}
+            </div>
+            {% endfor %}
+{#            <div class="card">#}
+{#                <h5 class="card-header">Header</h5>#}
+{#                <p class="card-body">Content</p>#}
+{#                <div class="card-footer center text-center"><p>Footer</p></div>#}
+{#            </div>#}
+        </div>
+
+
+{#        <table>#}
+{#            {% for field in gform.visible_fields %}#}
+{#                <tr>#}
+{#                    <td>{{field}}</td>#}
+{#                    <td class="error">#}
+{#                        {% for error in field.errors %} {{error}} {% endfor %}#}
+{#                    </td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#            <tr>#}
+{#                <td>Posted by:</td>#}
+{#                <td colspan="2">#}
+{#                    ({{gentry.created_by.first_name}} {{gentry.created_by.last_name}})#}
+{#                    {{gentry.creation_time|date:"Y-m-d"}}#}
+{#                </td>#}
+{#            </tr>#}
+{#        </table>#}
+{#        {% for field in gform.hidden_fields %}#}
+{#            {{field}} {{field.errors}}#}
+{#        {% endfor %}#}
+        {% csrf_token %}
+{#        <input type="submit" value="Update">#}
+    </form>
+
+
+{% endblock %}
+
+

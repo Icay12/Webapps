@@ -1,0 +1,86 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} <br>
+    username={{user.username}}
+{% endblock %}
+
+{% block option %}
+    <div class="col">
+    <form action="{% url 'global' %}" method="get">
+        <input type="submit" value="Global Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'follower' user.username %}" method="get">
+        <input type="submit" value="Follower Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'profile' user.username %}" method="get">
+        <input type="submit" value="Profile">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout">
+    </form>
+    </div>
+
+{% endblock %}
+
+{% block part-head %}
+    OTHER'S PROFILE
+{% endblock %}
+
+{% block content %}
+    <form class="center" method="post"  enctype="multipart/form-data"  action="{% url 'otherprofile' thisuser.username %}">
+
+        <div >
+
+                            <table>
+                                <tr>{% if profile.img %}
+                                        <img src="{% url 'photo' thisuser.id %}"  width="200px">
+                                    <br>{% endif %}
+                                </tr>
+                                <tr>
+                                    <td>User Name: {{ profile.username }}</td>
+                                </tr>
+                                <tr>
+                                    <td>First Name: {{ profile.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name: {{ profile.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Bio: {{ profile.bio }}</td>
+                                </tr>
+                            </table>
+                {% if not isfollow %}
+{#                    <a href="{% url 'other' thisuser.id %}"> <h7>Follow </h7></a>#}
+                    <input type="submit" value="Follow">
+                {% else %}
+                    <input type="submit" value="Unfollow">
+{#                    <a href="{% url 'unfollow' thisuser.id %}"> <h7>Unfollow </h7></a>#}
+                {% endif %}
+
+                <h5>Following:</h5>
+                <div class = cards>
+                {% for follower in followlist %}
+                    <div class = card>
+                        <a href="{% url 'otherprofile' follower.iuser %}"><h7 >{{follower.iuser}} </h7></a>
+                    </div>
+                {% endfor %}
+                </div>
+{#            {% endif %}#}
+
+        </div>
+
+        {% csrf_token %}
+
+    </form>
+
+{% endblock %}

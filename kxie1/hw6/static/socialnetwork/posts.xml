@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE posts [
+<!ELEMENT posts (post*)>
+<!ELEMENT post (user,text,creation_time)>
+<!ELEMENT user (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT creation_time (#PCDATA)>
+]>
+<posts>
+    {% for post in posts %}
+        <post>
+            <user>{{post.user}}</user>
+            <text>{{post.text}}</text>
+            <creation_time>{{post.creation_time}}</creation_time>
+        </post>
+    {% endfor %}
+</posts>

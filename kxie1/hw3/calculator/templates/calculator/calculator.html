@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="static/calculator/calculator.css">
+{#        <script src="js/calculator.js"> </script>#}
+    </head>
+
+    <body>
+        <div class="center">
+            <h1>Web Calculator</h1>
+
+            <form action ="cal" method="post">
+                {% csrf_token %}
+                <div>
+                    <input type="text" id="display"  value="{{display}}" disabled>
+                </div>
+                    <br>
+                <button class="btn number" type="submit" name= "digit" value="7">7</button>
+                <button class="btn number" type="submit" name= "digit" value="8">8</button>
+                <button class="btn number" type="submit" name= "digit" value="9">9</button>
+                <button class="btn operator" type="submit" name = "operation" value="+">&plus;</button>
+                    <br>
+                <button class="btn number" type="submit" name= "digit" value="4">4</button>
+                <button class="btn number" type="submit" name= "digit" value="5">5</button>
+                <button class="btn number" type="submit" name= "digit" value="6">6</button>
+                <button class="btn operator" type="submit" name = "operation" value="-">&minus;</button>
+                    <br>
+                <button class="btn number" type="submit" name= "digit" value="1">1</button>
+                <button class="btn number" type="submit" name= "digit" value="2">2</button>
+                <button class="btn number" type="submit" name= "digit" value="3">3</button>
+                <button class="btn operator" type="submit" name = "operation" value="*">&times;</button>
+                    <br>
+                <button class="btn number" type="submit" name= "digit" value="0">0</button>
+                <button class="btn operator col-2" type="submit" name = "operation" value="=">&equals;</button>
+                <button class="btn operator" type="submit" name = "operation" value="/">&divide;</button>
+
+                <br>
+                <br>
+                <br>
+                {% for error in errors %}
+                <div class="error">
+                    {{error}}
+                </div>
+                {% endfor %}
+
+                <input type="hidden" name="newValue" value="{{ newValue }}">
+                <input type="hidden" name="preValue" value="{{ preValue }}">
+                <input type="hidden" name="preOperation" value="{{ preOperation }}">
+                <input type="hidden" name="preButton" value="{{ preButton }}">
+            </form>
+
+        </div>
+    </body>
+</html>

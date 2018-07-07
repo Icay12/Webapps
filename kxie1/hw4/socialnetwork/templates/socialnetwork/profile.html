@@ -1,0 +1,62 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block user-info %}
+    {{user.first_name}} {{user.last_name}} <br>
+    username={{user.username}}
+{% endblock %}
+
+{% block option %}
+    <div class="col">
+    <form action="{% url 'global' %}" method="get">
+        <input type="submit" value="Global Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'follower' %}" method="get">
+        <input type="submit" value="Follower Stream">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'profile' %}" method="get">
+        <input type="submit" value="Profile">
+    </form>
+    </div>
+
+    <div class="col">
+    <form action="{% url 'logout' %}" method="get">
+        <input type="submit" value="Logout">
+    </form>
+    </div>
+
+{% endblock %}
+
+{% block part-head %}
+    PROFILE
+{% endblock %}
+
+{% block content %}
+    <form method="post" action= "#profile">
+        <div >
+            {% load staticfiles %}
+            <img src= "{% static thisuser.image %}"  alt= "Profile Image" width="80" height="80">
+            <h5>Name: {{thisuser.first_name}} {{thisuser.last_name}}</h5>
+            <h5>Bio: {{thisuser.bio}}</h5>
+
+                <h5>Followers:</h5>
+                <div class = cards>
+                {% for follower in thisuser.followers %}
+                    <div class = card>
+                    <a href="/socialnetwork/profile"><h7 >{{follower.first_name}} {{follower.last_name}} </h7></a>
+                    </div>
+                {% endfor %}
+                </div>
+
+        </div>
+
+        {% csrf_token %}
+
+    </form>
+
+{% endblock %}
