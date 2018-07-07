@@ -1,0 +1,32 @@
+{% extends "email_example/base.html" %}
+
+{% block user-info %}
+    <form action="{% url 'register' %}" method="get">
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+
+        <button type="submit">Login</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <p style="color:red">
+                Incorrect user name and password.
+            </p>
+        {% endif %}
+    </form>
+{% endblock %}

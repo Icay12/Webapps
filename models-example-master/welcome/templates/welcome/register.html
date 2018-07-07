@@ -1,0 +1,13 @@
+{% extends "welcome/base.html" %}
+
+{% block content %}
+    <p>Register in order to try out the examples:</p>
+
+    <form method="post" action="{% url 'register' %}">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Register" />
+    </form>
+{% endblock %}

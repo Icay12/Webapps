@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-03 14:30-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es-ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: addrbook/forms.py:9 addrbook/forms.py:61 addrbook/forms.py:97
+msgid "First Name"
+msgstr "Nombre"
+
+#: addrbook/forms.py:10 addrbook/forms.py:60 addrbook/forms.py:96
+msgid "Last Name"
+msgstr "Apellido"
+
+#: addrbook/forms.py:11
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+#: addrbook/forms.py:13
+msgid "User Name"
+msgstr "Nombre de usuario"
+
+#: addrbook/forms.py:14 addrbook/templates/addrbook/login.html:25
+msgid "Password"
+msgstr "Contraseña"
+
+#: addrbook/forms.py:16
+msgid "Confirm Password"
+msgstr "Contraseña otra Vez"
+
+#: addrbook/forms.py:31
+msgid "Passwords did not match."
+msgstr "Las contraseñas no son lo mismo."
+
+#: addrbook/forms.py:43
+msgid "Username is already taken."
+msgstr "El nombre de usuario ya está en uso."
+
+#: addrbook/forms.py:62 addrbook/forms.py:98
+msgid "Birthday"
+msgstr "Feche de nacimiento"
+
+#: addrbook/forms.py:63 addrbook/forms.py:99
+msgid "Address"
+msgstr "Domicilio"
+
+#: addrbook/forms.py:64 addrbook/forms.py:100
+msgid "City"
+msgstr "Ciudad"
+
+#: addrbook/forms.py:65 addrbook/forms.py:101
+msgid "State"
+msgstr "Estado"
+
+#: addrbook/forms.py:66 addrbook/forms.py:102
+msgid "Zip Code"
+msgstr "Código postal"
+
+#: addrbook/forms.py:67 addrbook/forms.py:103
+msgid "Country"
+msgstr "País"
+
+#: addrbook/forms.py:68 addrbook/forms.py:104
+msgid "Email Address"
+msgstr "Correo electrónico"
+
+#: addrbook/forms.py:69 addrbook/forms.py:105
+msgid "Home Phone"
+msgstr "Teléfono casa"
+
+#: addrbook/forms.py:70 addrbook/forms.py:106
+msgid "Cell Phone"
+msgstr "Teléfono móvil"
+
+#: addrbook/forms.py:71 addrbook/forms.py:107
+msgid "Fax Number"
+msgstr "Teléfono fax"
+
+#: addrbook/forms.py:72 addrbook/forms.py:108
+msgid "Spouse Last"
+msgstr "Apellido de esposo"
+
+#: addrbook/forms.py:73 addrbook/forms.py:109
+msgid "Spouse First"
+msgstr "Nombre de esposo"
+
+#: addrbook/forms.py:74 addrbook/forms.py:110
+msgid "Spouse Birthday"
+msgstr "Fecha de nacimiento de esposo"
+
+#: addrbook/forms.py:75 addrbook/forms.py:111
+msgid "Spouse Cell"
+msgstr "Teléfono móvil de esposo"
+
+#: addrbook/forms.py:76 addrbook/forms.py:112
+msgid "Spouse Email"
+msgstr "Email de esposo"
+
+#: addrbook/templates/addrbook/base.html:15
+msgid "Web App Address Book Example"
+msgstr "Web App Ejemplo Libreta de Direcciones"
+
+#: addrbook/templates/addrbook/create.html:11
+msgid "Create"
+msgstr "Crear"
+
+#: addrbook/templates/addrbook/edit.html:24
+msgid "Created"
+msgstr "Creado"
+
+#: addrbook/templates/addrbook/edit.html:31
+msgid "Last Updated"
+msgstr "Actualizado"
+
+#: addrbook/templates/addrbook/edit.html:41
+msgid "Update"
+msgstr "Actualizar"
+
+#: addrbook/templates/addrbook/edit.html:46
+msgid "Delete"
+msgstr "Suprima la entrada para"
+
+#: addrbook/templates/addrbook/list.html:6
+msgid "Multiple matches found"
+msgstr "Se encontraron varios coincidencias"
+
+#: addrbook/templates/addrbook/login.html:7
+#: addrbook/templates/addrbook/register.html:13
+msgid "Register"
+msgstr "Registrarse"
+
+#: addrbook/templates/addrbook/login.html:14
+msgid "Incorrect user name and password"
+msgstr "Nombre de usuario y contraseña incorrectos"
+
+#: addrbook/templates/addrbook/login.html:21
+msgid "Username"
+msgstr "Nombre de Usuario"
+
+#: addrbook/templates/addrbook/login.html:30
+msgid "Login"
+msgstr "Iniciar Sesión"
+
+#: addrbook/templates/addrbook/register.html:6
+msgid "Register for the address book"
+msgstr "Registrarse para la libreta de direcciones"
+
+#: addrbook/templates/addrbook/search.html:7
+msgid "username"
+msgstr "nombre de usuario"
+
+#: addrbook/templates/addrbook/search.html:9
+msgid "Logout"
+msgstr "Cerrar Sesión"
+
+#: addrbook/templates/addrbook/search.html:15
+msgid "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+msgstr "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+
+#: addrbook/templates/addrbook/search.html:23
+msgid "New Entry"
+msgstr "Nueva Entrada"
+
+#: addrbook/views.py:25
+#, python-brace-format
+msgid "No entries with last name = {0}"
+msgstr "No hay entradas con apellido = {0}"
+
+#: addrbook/views.py:53
+msgid "Entry created"
+msgstr "Creado"
+
+#: addrbook/views.py:61
+msgid "Invalid request.  POST method must be used."
+msgstr "Solicitud no válida. El método POST debe ser usado."
+
+#: addrbook/views.py:66
+#, python-brace-format
+msgid "Entry for {0}, {1} has been deleted."
+msgstr "La entrada para {0}, {1} ha sido eliminada."
+
+#: addrbook/views.py:105
+msgid "Entry updated."
+msgstr "Updato"

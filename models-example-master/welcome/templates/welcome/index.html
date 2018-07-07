@@ -1,0 +1,19 @@
+{% extends "welcome/base.html" %}
+
+{% block content %}
+<div class="text">This example includes three applications:</div>
+<ul>
+    <li><a href="/todolist2">todolist2</a> -- a version of the shared To Do List that stores its data in a database using a Django model.
+    <li><a href="/addrbook2">addrbook2</a> -- a version of the Address Book example that stores is data in the database, using a Django model, and uses ModelForms to reduce duplication of code.
+    <li><a>sample</a> -- a "sample" model, <strong>which you cannot run</strong>, but we will use to demonstrate accessing models from the python shell.
+</ul>
+
+<div class="note">
+Note: You will be asked to register/login to use these examples.
+</div>
+
+<div class="note">
+Note: These examples store data in the database.  The <kbd>settings.py</kbd> file is configured
+to store the data in SQLite.  The first time you run these examples will need to <kbd>migrate</kbd> to set up the database.  If you change the models, don't forget to <kbd>makemigrations</kbd>.
+</div>
+{% endblock %}

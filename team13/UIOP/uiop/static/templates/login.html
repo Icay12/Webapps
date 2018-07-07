@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="form-horizontal" name="myForm">
+            <div class="login-title">
+                <label class="control-label">Login</label>
+            </div>
+            <div class="controls">
+                <input type="text" id="inputUserName" placeholder="  username" name="username" ng-model="username" required>
+            </div>
+            <div class="controls">
+                <input type="password" id="inputPassword" placeholder="  password" name="password" ng-model="password" required>
+            </div>
+
+            <div class="error-show" style="color:red" ng-show="myForm.$dirty">
+                <span ng-show="myForm.username.$error.required && myForm.username.$dirty">Username</span>
+                <span ng-show="myForm.password.$error.required && !myForm.username.$error.required && myForm.password.$dirty">password</span>
+            </div>
+
+            <div class="error-show" style="color: red">
+                <span id="login-error"></span>
+            </div>
+
+            <div class="controls">
+                <button type="button" ng-disabled="myForm.username.$invalid || myForm.password.$invalid" ng-click="userLogin()">Login</button>
+            </div>
+            <div class="controls transform">
+                <a href="#signup">>>signup</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

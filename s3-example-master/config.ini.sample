@@ -1,0 +1,4 @@
+[S3]
+Bucket: webapp-demo
+AccessKey: <AWS-Access-Key>
+SecretKey: <AWS-Secret-Access-Key>

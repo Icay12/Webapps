@@ -1,0 +1,15 @@
+.content {
+    margin: auto;
+    width: 960px;
+    border-bottom: 30px;
+    min-height: 550px;
+}
+
+.img-circle {
+    width: 26px;
+    height: 26px;
+}
+
+#settingChannel {
+    margin-top: 5px;
+}

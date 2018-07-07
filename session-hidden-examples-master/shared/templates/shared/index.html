@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/shared/todolist.css">
+    <title>Shared To Do List #1</title>
+</head>
+
+<body>
+
+<div class="title">Shared To Do List #1</div>
+
+{% for error in errors %}
+    <div class="error">
+        {{error}}
+    </div>
+{% endfor %}
+
+<form class="add-form" action="/shared/add-item" method="post">
+    <span class="label">Item to add:</span>
+    <input type="text" name="item" autofocus>
+    <input type="submit" text="Add item">
+    {% csrf_token %}
+</form>
+
+<div class="sub-title"> Current todo list: </div>
+<ol>
+    {% for item in items %}
+        <li>
+            <form class="delete-form" action="/shared/delete-item" method="post">
+                <input type="hidden" name="item" value="{{item}}">
+                <input type="submit" value="X">
+                {% csrf_token %}
+            </form>
+            {{item|safe}}
+        </li>
+    {% endfor %}
+</ol>
+
+</body>
+</html>

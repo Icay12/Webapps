@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body onload = "document.forms[0].elements[0].focus();">
+    <div id="brand-wrapper">
+        <h1 id="brand">UIOP</h1>
+        <p id="detail-brand"><span class="special-font">U</span><span class="normal-font">rgent</span> <span class="special-font" id="font1">I/O</span> <span class="special-font" id="font2">P</span><span class="normal-font">ortal</span></p>
+    </div>
+    <div id="digit-wrapper" class="form-inline">
+        <input type="text" class="digit-input" maxlength="1" id="sn1" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
+        <input type="text" class="digit-input" maxlength="1" id="sn2" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
+        <input type="text" class="digit-input" maxlength="1" id="sn3" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
+        <input type="text" class="digit-input" maxlength="1" id="sn4" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
+    </div>
+
+     <div id="enter-wrapper">
+        <p>
+            <span>Input the channel code to <button class="btn btn-enter" ng-click="enterChannel()">Enter</button> the existed channel</span>
+        </p>
+    </div>
+
+    <div id="info-wrapper">
+        <p><span>UIOP (Urgent I/O portal) targets to transferring files when it is not possible or convenient to use other ways like Bluetooth, Airdrop or USB.</span></p>
+    </div>
+
+     <div id="setting-wrapper">
+        <div class="checkbox">
+            <label>Password for create channel <input type="password" id="password_channel"></label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" id="lectureMode">Choose Lecture mode</label>
+        </div>
+    </div>
+
+    <div id="create-wrapper" class="controls transform">
+        <a ng-click="createChannel()">>>> Create a new channel</a>
+    </div>
+</body>
+</html>

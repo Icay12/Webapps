@@ -1,0 +1,69 @@
+{% extends "bs_addrbook/search.html" %}
+
+{% load addcss %}
+
+{% block content %}
+
+    <h3 class="col-sm-offset-1 col-sm-11">Edit Record</h3>
+
+    {% for error in form.non_field_errors %}
+        <p style="color: red">
+            {{ error }}
+        <p>
+    {% endfor %}
+
+    <form class="form-horizontal" method="post" action="{% url 'edit' entry.id %}">
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{ field.label }}</label> 
+                <div class="col-sm-3">
+                    {{ field|addcss:"form-control" }}
+                </div>
+                <div class="col-sm-7">
+                    <span class="help-inline">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Created</label> 
+            <div class="col-sm-10">
+                <input type=text disabled="" value="{{entry.creation_time|date:'Y-m-d'}}"}>
+                <span class="help-inline">
+                    (by {{entry.created_by.first_name}} {{entry.created_by.last_name}})
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Last Updated</label> 
+            <div class="col-sm-10">
+                <input type=text disabled="" value="{{entry.update_time|date:'Y-m-d'}}"}>
+                <span class="help-inline">
+                    (by {{entry.updated_by.first_name}} {{entry.updated_by.last_name}})
+                </span>
+            </div>
+        </div>
+
+        {% for field in form.hidden_fields %}
+            {{field}} {{field.errors}}
+        {% endfor %}
+        {% csrf_token %}
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Update</button>
+        </div>
+    </form>
+
+    <form action="{% url 'delete' entry.id %}" class="form-horizontal" method="post">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Delete</button>
+        </div>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}

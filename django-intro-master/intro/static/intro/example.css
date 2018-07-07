@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    font-size: x-large;
+}
+
+a:hover {
+    background-color: lightgray;
+}
+
+label, input {
+    font-size: xx-large;
+}

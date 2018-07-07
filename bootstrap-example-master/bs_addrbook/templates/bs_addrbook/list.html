@@ -1,0 +1,12 @@
+{% extends "bs_addrbook/search.html" %}
+
+{% block content %}
+    <h3 class="col-sm-offset-1 col-sm-11">Multiple matches found:</h3>
+    <div class="list-group col-sm-offset-1 col-sm-3">
+        {% for e in entries %}
+            <a href="{% url 'edit' e.id %}" class="list-group-item">
+                {{e.last_name}}, {{e.first_name}}
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

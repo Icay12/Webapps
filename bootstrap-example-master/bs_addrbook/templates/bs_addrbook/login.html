@@ -1,0 +1,50 @@
+{% extends "bs_addrbook/base.html" %}
+
+{% load addcss %}
+
+{% block user-info %}
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}    
+    {% if form.errors %}
+        <h4 class="col-sm-offset-1 col-sm-11" style="color:red">
+           Invalid user name and/or password
+        </h4>
+    {% endif %}
+
+    <form class="form-horizontal" method="post" action="{% url 'login' %}">
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{ field.label }}</label> 
+                <div class="col-sm-3">
+                    {{ field|addcss:"form-control" }}
+                </div>
+                <div class="col-sm-7">
+                    <span class="help-inline">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Login</button>
+            </div>
+        </div>
+
+        <input type="hidden" name="next" value="{{ next }}" />
+
+        {% for field in form.hidden_fields %}
+            {{field}} {{field.errors}}
+        {% endfor %}
+        {% csrf_token %}
+    </form>
+
+
+{% endblock %}

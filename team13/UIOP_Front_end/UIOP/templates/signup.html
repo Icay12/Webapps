@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="login-container">
+    <form class="form-horizontal" name="myForm">
+        <div class="login-title">
+            <label class="control-label">Signup</label>
+        </div>
+        <div class="controls">
+            <input type="text" id="inputUserName" placeholder="  username" name="username" ng-model="username" required>
+        </div>
+        <div class="controls">
+            <input type="password" id="inputPassword" placeholder="  password" name="password" ng-model="password" required>
+        </div>
+        <div class="controls">
+            <input type="password" id="repeatPassword" placeholder="  repeat password" name="repeat" ng-model="repeat" required>
+        </div>
+
+        <div class="error-show" style="color:red" ng-show="myForm.$dirty">
+            <span ng-show="myForm.username.$error.required && myForm.username.$dirty">Please input the username</span>
+            <span ng-show="myForm.password.$error.required && !myForm.username.$error.required && myForm.password.$dirty">Please input the password</span>
+            <span ng-show="myForm.repeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required && myForm.repeat.$dirty">Please repeat the password</span>
+            <span ng-show="password!=repeat &&!myForm.repeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required">Please enter the same password</span>
+        </div>
+
+        <div class="error-show" style="color: red">
+            <span id="login-error"></span>
+        </div>
+
+        <div class="controls">
+            <button type="button" ng-disabled="myForm.username.$error.required||myForm.password.$error.required||myForm.repeat.$error.required||password!=repeat" ng-click="userRegister()">signup</button>
+        </div>
+        <div class="controls transform">
+            <a href="#login">>>Login</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "bs_addrbook/base.html" %}
+
+{% block user-info %}
+    <p class="navbar-text"><span class="glyphicon glyphicon-user"></span> {{user.first_name}} {{user.last_name}}</p>
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+{% endblock %}
+
+{% block search-bar %}
+    <form action="{% url 'search' %}">
+        <script>
+            var alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            for (var i=0; i<alphabet.length; i++) {
+                document.write(
+                    '<button class="btn btn-default" type="submit" name="last" value="' +
+                    alphabet.charAt(i) + '">' +
+                    alphabet.charAt(i) + '</button>\n')
+            }
+        </script>
+        <button formaction="{% url 'create' %}" title="Create New Record"
+                class="btn btn-default">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </form>
+{% endblock %}

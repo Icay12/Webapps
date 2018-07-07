@@ -1,0 +1,40 @@
+.profile-container {
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.title-profile {
+    color: #246ff5;
+}
+
+.detail-basic {
+    margin-top: 5%;
+}
+
+.profile-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000000;
+    font-weight: lighter;
+    line-height: 24px;
+}
+
+.basic-info-form {
+    margin-top: 5%;
+    margin-left: 100px;
+}
+
+.form-control {
+    width: 50%;
+}
+
+#button-save {
+    margin-left: 75%;
+    margin-bottom: 5%;
+}
+
+.channel-list-detail {
+    margin-left: 100px;
+    font-size: 20px;
+    font-weight: lighter;
+}

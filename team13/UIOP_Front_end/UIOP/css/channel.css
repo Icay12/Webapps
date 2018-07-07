@@ -1,0 +1,176 @@
+#channel_wrapper {
+    width: 800px;
+    margin: auto;
+}
+
+#channel_info {
+    border-bottom: 2px solid #EFEFF4;
+}
+
+#channel_code {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    color: #000000;
+    line-height: 36px;
+}
+
+#qr_code {
+    color: #a5a3a8;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.default-info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 24px;
+}
+
+#expire_info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #000000;
+    font-weight: lighter;
+    line-height: 24px;
+}
+
+#loginOwner {
+    display: none;
+    color: #1c5ff5;
+    margin-left: 1%;
+}
+
+.card-group {
+    display: flex;
+    table-layout: fixed;
+    flex-wrap: wrap;
+}
+
+.file-wrapper {
+    margin-top: 35px;
+    margin-left: 80px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 150px;
+    height: 140px;
+}
+
+.upload-wrapper {
+    margin-top: 35px;
+    margin-left: 80px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 150px;
+    height: 140px;
+}
+
+.fa_file {
+    margin-top: 20px;
+    margin-left: 38px;
+    font-size:70px;
+}
+
+.file_name {
+    margin-top: 5px;
+    margin-left: 9px;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#downloadTimes-wrapper > p {
+    color: #797979;
+}
+
+#downloadTimes-wrapper {
+    margin-top: 25%;
+    margin-left: 5%;
+}
+
+#downloadTimes {
+    white-space: pre;
+    margin: auto;
+    color: #797979;
+}
+
+.fa-file-pdf {
+    color: #f71c2b;
+}
+
+#plus {
+    font-size: 80px;
+    color: #246ff5;
+    margin-left: 28px;
+    margin-top: 8px;
+}
+
+#plus:hover {
+    color: #58a2f5;
+}
+
+#file_button {
+    visibility: hidden;
+}
+
+#duration_time {
+    width: 60px;
+    height: 34px;
+    padding: 6px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#channel_password {
+    width: 40%;
+}
+
+.inclass {
+    display: inline-block;
+}
+
+#qr-style {
+    width: 200px;
+    height: 200px;
+}
+
+.qrcode {
+    width: 300px;
+    height: 300px;
+    margin-left: 130px;
+    padding: 50px;
+}
+
+.online-number-wrapper {
+    width: 150px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+}
+
+#online-number {
+    white-space: pre;
+    margin-top: 15px;
+    margin-left: 15px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="basic-info-container">
+            <h2 class="title-profile">Basic Information</h2>
+            <form class="basic-info-form">
+                <div class="form-group row">
+                    <label for="username" class="col-sm-3 col-form-label profile-label">Username</label>
+                    <div class="col-sm-5">
+                        <input type="text" readonly class="form-control" id="username" value="[[username]]">
+                    </div>
+                </div>
+            </form>
+            <div class="detail-basic">
+                <h2 class="title-profile">Modify Password</h2>
+                <form class="basic-info-form" name="myForm">
+                    <div class="form-group row">
+                        <label for="oldpassword" class="col-sm-3 col-form-label profile-label">Old Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" id="oldpassword" name="oldpassword" ng-model="oldpassword" required placeholder="Old Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="newpassword" class="col-sm-3 col-form-label profile-label">New Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" id="newpassword" name="newpassword" ng-model="newpassword" required placeholder="New Password">
+                        </div>
+                    </div>
+
+                    <div class="error-show" style="color:red" ng-show="myForm.$dirty">
+                        <span ng-show="myForm.oldpassword.$error.required && myForm.oldpassword.$dirty">Please input the old password</span>
+                        <span ng-show="myForm.newpassword.$error.required && !myForm.oldpassword.$error.required && myForm.newpassword.$dirty">Please input the new password</span>
+                        <span ng-show="oldpassword==newpassword &&!myForm.newpassword.$error.required &&!myForm.oldpassword.$error.required ">Please enter the different new password</span>
+                    </div>
+
+                    <div>
+                        <button id="button-save" class="btn btn-enter" ng-disabled="myForm.newpassword.$error.required||myForm.oldpassword.$error.required||myForm.oldpassword==myForm.newpassword" ng-click="modifyUserPassword()">Modify</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="channel-list-container">
+            <h2 class="title-profile">Channel List</h2>
+            <ul class="channel-list-detail" ng-repeat="channel in channelList">
+                <!--<li ng-repeat="item in itemList"><a>Channel [[channel.channel_code]]</a></li>-->
+                <li>Channel [[channel.channelCode]]</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

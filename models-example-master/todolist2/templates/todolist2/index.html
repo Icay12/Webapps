@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/todolist2/todolist.css">
+    <title>Shared To Do List #2</title>
+</head>
+
+<body>
+
+<div class="title">Shared To Do List #2</div>
+
+{% for error in errors %}
+    <div class="error">
+        {{error}}
+    </div>
+{% endfor %}
+
+<form class="add-form" action="{% url 'add-item' %}" method="post">
+    <label>Item to add:</label>
+    <input type="text" name="item" autofocus>
+    <input type="submit" text="Add item">
+    {% csrf_token %}
+</form>
+
+<div class="sub-title"> Current todo list: </div>
+<ol>
+    {% for item in items %}
+        <li>
+            <form class="delete-form"
+                  action="{% url 'delete-item' item.id %}"
+                  method="POST">
+                <input type="submit" value="X">
+                {% csrf_token %}
+            </form>
+            {{item.text}}
+            <span class="details">
+                (id={{item.id}},
+                user={{item.user}},
+                ip_addr={{item.ip_addr}})
+            </span>
+        </li>
+    {% endfor %}
+</ol>
+
+<form action="{% url 'logout' %}" method="get">
+    <input type="submit" value="Logout">
+</form>
+
+</body>
+</html>

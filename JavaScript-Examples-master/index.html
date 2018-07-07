@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>JavaScript ToDoList Example</title>
+        <link rel="stylesheet" href="css/better-example.css">
+        <script>
+            function onLoad() {
+                var ans = prompt("Is the lecture over yet?");
+                var face = '\u262E';  // Peace
+                if (ans == "No" || ans == "no") {
+                    face = "\u2639";  // Frowning Face
+                } else if (ans == "Yes" || ans == "yes") {
+                    face = "\u263A";  // Smiling Face
+                }
+                document.getElementById('face-place')
+                    .appendChild(document.createTextNode(face));
+            }
+
+            function addNames() {
+                var first = document.getElementById("first-name").value;
+                var last  = document.getElementById("last-name").value;
+                alert(first + last);
+                alert(parseInt(first) + parseInt(last));
+            }
+        </script>
+        <script src="js/isprime.js"></script> 
+    </head>
+
+    <body onLoad="onLoad()">
+        <div class="title">
+            &#x2606; JavaScript Demos <span id="face-place"></span>
+        </div>
+        <div>
+            <ul>
+                <li><a href="primes.html">primes.html</a></li>
+                <li><a href="movement.html">movement.html</a></li>
+                <li><a href="todolist.html">todolist.html</a></li>
+            </ul>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label>First Name:</label>
+                    </td>
+                    <td>
+                        <input id="first-name" type="text" name="first" autofocus />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Last Name:</label>
+                    </td>
+                    <td>
+                        <input id="last-name" type="text"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button onclick="addNames()">Add</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <label>Check Prime:</label>
+            <input id="number" type="text" onfocus="isPrimeFocus()"/>
+            <button id="is-prime-button" onclick="isPrimeClick()">Is Prime?</button>
+        </div>
+    </body>
+</html>

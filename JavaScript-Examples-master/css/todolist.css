@@ -1,0 +1,38 @@
+.title {
+    font-size:36px;
+    font-family:sans-serif;
+    font-weight:bold;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+label {
+    font-size: xx-large;
+    font-family: sans-serif;
+    width: 180px;
+    display: inline-block;
+    padding: 10px;
+}
+
+input {
+    font-size: x-large;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+button {
+    font-size: x-large;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.line {
+    font-size: x-large;
+}
+
+.row {
+    font-size: x-large;
+    font-family: sans-serif;
+}
+

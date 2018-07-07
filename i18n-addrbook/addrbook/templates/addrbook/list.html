@@ -1,0 +1,12 @@
+{% extends "addrbook/search.html" %}
+
+{% load i18n %}
+
+{% block content %}
+    <h3>{% trans 'Multiple matches found' %}:</h3>
+    {% for e in entries %}
+        <div class="list">
+            <a href="{% url 'edit' e.id %}">{{e.last_name}}, {{e.first_name}}</a>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,72 @@
+li {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+div {
+    background-color: lightgray;
+    width: 500px;
+    padding: 20px;
+    margin: 3px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: darkgray;
+}
+
+form {
+    background-color: darkgray;
+    width: 500px;
+    padding: 26px;
+    margin: 3px;
+}
+
+.title {
+    color:blue;
+    font-size:36px;
+    font-family:sans-serif;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.row {
+    width: 400px;
+    padding: 5px;
+    margin: 1px;
+    border-width: 0px;
+    background-color: lightgray;
+}
+
+label {
+    font-size: large;
+    font-family: sans-serif;
+    width: 125px;
+    display: inline-block;
+}
+
+input {
+    font-size: large;
+}
+
+button {
+    font-size: x-large;
+    background-color: lightblue;
+}
+
+input:focus {
+    background-color: pink;
+}
+
+button:focus {
+    background-color: pink;
+}
